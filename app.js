@@ -32,8 +32,8 @@ app.get("/pageone", function(req, res){
 // FIX *** IMPORTANT - Question: NO CALLBACK IN PROD
 
 // COMMIT THIS 
-//   var port_number = app.listen(process.env.PORT || 3000);
-//   app.listen(port_number);
+  var port_number = app.listen(process.env.PORT || 3000);
+  app.listen(port_number);
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,6 +41,6 @@ app.get("/pageone", function(req, res){
 
 // ~~~~~~~~~~~~~~~~
 // DONT COMMIT THIS 
-app.listen(PORT, function(){
-     console.log(`app listening on http://localhost:${PORT}`);
-});
+// app.listen(PORT, function(){
+//      console.log(`app listening on http://localhost:${PORT}`);
+// });
