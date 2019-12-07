@@ -13,3 +13,13 @@
  https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile
  
  https://devcenter.heroku.com/articles/http-routing
+
+ ## heroku app success :) 
+
+ **yes**
+
+
+ do NOT commit until changes are fully ready for next deploy 
+
+ #### Consume current deploy ;) 
+ #### Get excited for next deploy ;) 
