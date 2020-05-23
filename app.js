@@ -1,11 +1,12 @@
 var express = require("express"); 
 var path = require("path");
 var ejs = require("ejs");
+var helmet = require("helmet");
 var PORT = process.env.port || 8080;
 
 var app = express()
 
-
+app.use(helmet())
 // app.engine("ejs", ejs({defaultLayout: "main"}));
 app.set("view engine", "ejs");
 
