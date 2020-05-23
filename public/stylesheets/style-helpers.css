@@ -1,6 +1,15 @@
 /* credits page styles */
 .attribution__video{
-    width: 280px;
-    height: auto;
+    
+    width: 280px ;
+    height: 480px; 
+    
     margin: auto 20px 0 0;
+}
+
+/* index page and all pages (in dev) */
+
+.border-working{
+   border-left: 4px solid #000 !important;
+   border: 1px solid #000 !important; 
 }
