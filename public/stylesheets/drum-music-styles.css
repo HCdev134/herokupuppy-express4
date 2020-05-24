@@ -1,0 +1,68 @@
+:root{
+    --orig-audio-color: #ffc600; 
+    --drum-color-0: #000; 
+    --drum-color-1: #333; 
+    --drum-color-green: #35df81; 
+  }
+html {
+    font-size: 12px;
+    background: url("./../images/person-doing-tricks-on-cassette-tape-1762578.jpg") bottom center fixed;
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+  }
+  
+  body,html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+
+.ev-keys{
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background:rgba(0,0,0,0.4); 
+    color: #fff; 
+}
+
+.key {
+    border: .4rem solid black;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 10rem;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+  }
+  
+  .playing {
+    transform: scale(1.1);
+    border-color: var(var(--drum-color-green));
+    box-shadow: 0 0 1rem var(--drum-color-0) ;
+  }
+  
+kbd {
+    display: block;
+    font-size: 4rem;
+}
+  
+.sound {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #10ad57;
+}
+@media(max-width:792px){
+    .ev-keys{
+        flex-direction: column;
+        transform: translateX(-20%);
+    }
+}

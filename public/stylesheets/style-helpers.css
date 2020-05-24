@@ -13,3 +13,8 @@
    border-left: 4px solid #000 !important;
    border: 1px solid #000 !important; 
 }
+.festival-svg{
+    overflow-x: hidden; 
+    border: 1px solid red; 
+    padding: 0.725rem; 
+}
