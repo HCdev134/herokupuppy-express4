@@ -62,6 +62,16 @@
 
   <script>
 
+var inputTrigger = document.querySelector("input.mobile-trigger"); 
+    inputTrigger.addEventListener("click", mobilePlaySound)
+function mobilePlaySound(e){
+    
+
+    // trigger a focus on body for mobile 
+    document.querySelectorAll(".key").focus();
+    document.body[0].focus();
+
+}   
 function playSound(e){
 
     console.log("test:", e); 
