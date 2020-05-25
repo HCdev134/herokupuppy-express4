@@ -14,24 +14,29 @@ body{
     padding:0;
 }
 .desktop_navbar{
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
     background: transparent;
+
+    
+    justify-content: center;
+
 }
 .desktop_navbar h2{
     text-align: center;
 }
 .desktop_navbar a{
-    display: flex;
-    flex-direction: row;
-   
     color:#fff;
-    
+    padding: 10px; 
     border-bottom: 4px solid transparent;
     text-decoration: none;
-
+    margin-left: 2rem; 
     font-size: 1.2rem;
 }
-
+.desktop_navbar a:last-child{
+    border-bottom: 2px solid #3189ED; 
+}
 .desktop_navbar a:hover{
     color: #fef;
     border-bottom: 2px solid #1D3557;
@@ -66,9 +71,13 @@ section.page-section:hover{
         margin: 1rem auto;
         padding: 6rem;
     }
-    .desktop_navbar a {
+    .desktop_navbar{
         display: flex; 
         flex-direction: column;
+    }
+  
+    .desktop_navbar a {
+        width: 100%; 
         border-bottom: 2px solid #1D3557;
     }
     .desktop_navbar a:hover{

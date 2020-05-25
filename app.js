@@ -1,22 +1,24 @@
 var express = require("express"); 
 var path = require("path");
 var ejs = require("ejs");
+// var morgan = require("morgan")
 var helmet = require("helmet");
 var PORT = process.env.port || 5000;
 
 var app = express()
 
-app.use(helmet())
+
 // app.engine("ejs", ejs({defaultLayout: "main"}));
 app.set("view engine", "ejs");
 
 
 app.use(express.static(path.join(__dirname, "public")));
 
-
-app.use("/styles", express.static(__dirname + '/styles'));
-app.use("/images", express.static(__dirname + '/images'));
-app.use("/scripts", express.static(__dirname + '/scripts'));
+// morgan go before helmet and after express Static
+// app.use(morgan("tiny"));
+// app.use("/styles", express.static(__dirname + '/styles'));
+// app.use("/images", express.static(__dirname + '/images'));
+// app.use("/scripts", express.static(__dirname + '/scripts'));
 
 // TODO: write our own logger since morgan cant be used in prod, and we not spen muney 
 (function(){
@@ -24,6 +26,8 @@ app.use("/scripts", express.static(__dirname + '/scripts'));
 })()
 // lines 10 - 18
 // viewed at based directory http://localhost:8080/
+
+app.use(helmet())
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + 'public/index.html'));
 });

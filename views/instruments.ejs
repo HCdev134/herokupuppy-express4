@@ -6,13 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <title>Document</title>
     <link type="text/css" href="/public/stylesheets/materialize.min.css">
-   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">  -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+  
+
+
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous" />
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+           integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous">
+   
 </head>
 <body>
     <h1 class="center">Instruments</h1>
 
-    <% include('partials/nav.ejs') %> 
+    <%- include('partials/breadcrumbs.ejs') %> 
+
+
     <div class="container center">
         <ul class="collection center-align">
 
@@ -28,5 +37,28 @@
       <div>
         <h5 class="center-align"> <%= info %> </h5>
       </div>
+<!-- instrument cards -->
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="./public/images/people-in-concert-1763075.jpg">
+              <span class="card-title">Drums Demo</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fa fa-plus-sign">add</i></a>
+            </div>
+            <div class="card-content">
+              <p>Drums Demo Page</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="/public/javascripts/materialize-helpers.js"></script>
+      <script>
+          $(function(){
+              $("sidenav").sidenav()
+          })
+      </script>
 </body>
 </html>
