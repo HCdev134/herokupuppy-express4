@@ -12,20 +12,19 @@ var app = express()
 app.set("view engine", "ejs");
 
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 // morgan go before helmet and after express Static
 // app.use(morgan("tiny"));
-// app.use("/styles", express.static(__dirname + '/styles'));
-// app.use("/images", express.static(__dirname + '/images'));
-// app.use("/scripts", express.static(__dirname + '/scripts'));
+app.use("/stylesheets", express.static(__dirname + '/styles'));
+app.use("/images", express.static(__dirname + '/images'));
+app.use("/javascripts", express.static(__dirname + '/scripts'));
 
 // TODO: write our own logger since morgan cant be used in prod, and we not spen muney 
 (function(){
   console.log("server running, function immediately", PORT);
 })()
-// lines 10 - 18
-// viewed at based directory http://localhost:8080/
+
 
 app.use(helmet())
 app.get('/', function (req, res) {
@@ -38,13 +37,19 @@ app.get("/pageone", function(req, res){
 });
 
 app.get("/instruments", function(req, res){
+   // res.redirect("content.html");
     res.render("instruments",
     // object dummy data
      {
       info: "Instruments Page",
-      instrumentArr: ["Drums", "EDM pad", "Drum pad", "digital guitar", "scale mixer"]
-    });
+      instrumentArr: ["Drums", "EDM pad", "Drum pad", "digital guitar", "scale mixer"],
+      unsplashURIs: ["unsplash api 1", "unsplash api 2"]
+     }
+    ),
+    console.log('redirect attempt, redirecting...'); 
+   
 });
+
 // FIX *** IMPORTANT - Question: NO CALLBACK IN PROD
 
 // COMMIT THIS 
