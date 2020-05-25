@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,18 @@
 </head>
 
 <body>
+    <div class="input-container">
+        <label for="">Sequence Input</label>
+        <input type="text" id="drumseq" class="sequence-input">
+    </div>
+
+    <button id="btn-mobile-trigger" class="mobile-keyboard-trigger btn black white-text">Trigger Mobile
+        Keyboard</button>
+    <button id="btn-mobile-trigger2" class="mobile-keyboard-trigger btn">Keyboard Trigger Test 2</button>
+
     <div id="ev-keys" class="ev-keys">
-       <input type="text" class="mobile-trigger">
-        <div data-key="65" class="key">
+
+        <div id="boom-drum" data-key="65" class="key">
             <kbd>A</kbd>
             <span class="sound">clap</span>
         </div>
@@ -48,64 +58,259 @@
             <span class="sound">tink</span>
         </div>
 
+
+    </div>
+
+    <div class="container white">
+        <h3>Audio Controls For Loops</h3>
+        <div class="row">
+            <div class="col s6 m4 green">
+                <h2>Music Loops</h2>
+                <button id="loop-1" class="btn btn-block margin-button">loop 1</button>
+            </div>
+            <div class="col s6 m4 offset-4 blue">
+                <h2>Loop Controls</h2>
+                
+                <button id="stop-button" class="btn btn-block margin-button">Stop Loops</button>
+            </div>
+   
+           
+         
+           
+        </div>
+       
+    </div>
+
+    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="83" src="sounds/hihat.wav"></audio>
+    <audio data-key="68" src="sounds/kick.wav"></audio>
+    <audio data-key="70" src="sounds/openhat.wav"></audio>
+    <audio data-key="71" src="sounds/boom.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/tom.wav"></audio>
+    <audio data-key="76" src="sounds/tink.wav"></audio>
+
+
+    <div class="container white">
+        <div class="row">
+            <div class="col s1">1</div>
+            <div class="col s1">2</div>
+            <div class="col s1">3</div>
+            <div class="col s1">4</div>
+            <div class="col s1">5</div>
+            <div class="col s1">6</div>
+            <div class="col s1">7</div>
+            <div class="col s1">8</div>
+            <div class="col s1">9</div>
+            <div class="col s1">10</div>
+            <div class="col s1">11</div>
+            <div class="col s1">12</div>
+          </div>
     </div>
     
-  <audio data-key="65" src="sounds/clap.wav"></audio>
-  <audio data-key="83" src="sounds/hihat.wav"></audio>
-  <audio data-key="68" src="sounds/kick.wav"></audio>
-  <audio data-key="70" src="sounds/openhat.wav"></audio>
-  <audio data-key="71" src="sounds/boom.wav"></audio>
-  <audio data-key="72" src="sounds/ride.wav"></audio>
-  <audio data-key="74" src="sounds/snare.wav"></audio>
-  <audio data-key="75" src="sounds/tom.wav"></audio>
-  <audio data-key="76" src="sounds/tink.wav"></audio>
+    <div class="container white">
+        <button class="btn center show-text">show more</button>
+        <h5>UI explanation</h5>
+        <p id="text-body" class="ui-explanation">
 
-  <script>
+            Users: The Drum Sounds May take a few seconds to load. 
+            Press The corresponding keys to make drum sounds 
+            Loops: If the loop will not stop playing after clicking "Stop Loops", 
+            Refresh the Page or Close the Tab
 
-var inputTrigger = document.querySelector("input.mobile-trigger"); 
-    inputTrigger.addEventListener("click", mobilePlaySound)
-function mobilePlaySound(e){
-    
 
-    // trigger a focus on body for mobile 
-    document.querySelectorAll(".key").focus();
-    document.body[0].focus();
+            <hr>
+            there is no way to initially trigger the keyboard on android and ios devices,
+            so the mobile version has to be programmed using click events.
+            We still arent sure if click events will have the behavior we want compared to touch events.
+            We are working on a script to interpet input by keycodes, but the initial focus on mobile keyboard
+            for input is a big blocker,
+            typically,
+        </p>
+        <pre>:focus   </pre>
+        is only applied to input elements on mobile devices,
+        <p> I have not seen a solution to
+            target single containers or the document body
 
-}   
-function playSound(e){
 
-    console.log("test:", e); 
-        //   do i need to escape quotes here ? 
-          var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            Features for mobile devices might have to be centered around buttons vs keys.
 
-          var audioKey = document.querySelector(`div.key[data-key="${e.keyCode}"]`);
+            There will also be a section for your input on features in the coming weeks
 
-        //   var cymbalDecay, cymbalAttack; 
-    
-          if(!audio){
-              return;
-          }
-          audio.currentTime = 0;
-          audio.play()
-          audioKey.classList.add('playing'); 
-          
-}
+            Mobile Screen Size and the number of "buttons" you can press is fairly limited on web apps
 
-      function removeTransition(e){
-          if(e.propertyName !== "transform"){
-              return; 
-          }
-          console.log(this); 
-          this.classList.remove("playing"); 
-      }
+            Since the Key Code (Desktop) Methods work really well, we are working on implementing Instrument
+            Input Sequences based on key codes.
+            (Accidentally discovered this trying to trigger the android keyboard with an input element)</p>
 
-      var allKeys = document.querySelectorAll(".key"); 
-     
-      allKeys.forEach(function(audioKey){
-          audioKey.addEventListener("transitionend", removeTransition)
-      });
-      window.addEventListener("keydown", playSound)
-  </script>
+
+
+
+        <div style="font-size: 18px;">When Pressing Keys at First, Sounds May take 2-3 seconds to load</div>
+    </div>
+
+
+
+
+    <script src="./javascripts/jquery3.5.1-uncompressed.js"></script>
+    <script src="./javascripts/materialize.min.js"></script>
+    <script>
+
+        // #region TODO and comments
+        /* 
+         * desktop improvements 
+         * improve transition speed so drums can switch as fast as possible 
+         * attack and decay speed variables for cymbals 
+         * 
+         */
+
+
+        //GOAL mobile play drums, Click Events 
+
+        // trying to trigger a focus so android keyboard opens up and applys key events to body > #ev-keys
+
+        // mobile-detect & find by user agent 
+        // #endregion
+
+        // 10 seperate 
+        var one = document.querySelector(`div[data-key="65"]`); 
+
+        one.onclick = function(){
+            console.log("function ran: one.click"); 
+            var oneAudio = new Audio("sounds/boom.wav");
+            oneAudio.play()
+        }
+        // simple code, 1 event per one audio, would have to write 10 seperate functions
+        function SeperateTenCalls(){
+            // Ten Functions for 10 buttons, not ideal 
+        }
+        function playSimple(){
+            // get the audio element to play and pause
+        }
+        function playItCorrectly() {
+            // ieterate over audio elements and play the correct one 
+
+            //OPTION:loop through all 10 audios 
+            // OPTION: create 10 anonymous functions for click event 
+            // var songs_list = new Array("sounds/clap.wav", "sounds/hihat.wav", "sounds/kick.wav", "sounds/openat.whav", "sounds/ride.wav", "sounds/snare.wav", "sounds/tink.wav", "sounds/tom.wav"); 
+        }
+
+        // change to loop buttons 
+        var loop_one = document.querySelector(`button#loop-1`);
+        function LoopOne() {
+
+
+            var audio = new Audio(),
+                i = 0;
+            var playlist = new Array('sounds/boom.wav', 'sounds/clap.wav', "sounds/hihat.wav");
+
+            audio.addEventListener('ended', function () {
+                i = ++i < playlist.length ? i : 0;
+                console.log("testing:", i)
+                audio.src = playlist[i];
+                audio.play();
+            }, true);
+            audio.volume = 0.8;
+
+            audio.src = playlist[0];
+            audio.play();
+            audio.currentTime = 0;
+            audio.loop = false;
+
+
+            // loop stopper, has to be within function to recognize audio variable 
+            var audio_stop_btn = document.getElementById("stop-button");
+            audio_stop_btn.onclick = function () {
+               
+               
+                setTimeout(function () {
+                    console.log("clicked");
+                    audio.loop = false;
+                    // audio.currentSrc = "sounds/ride.wav"; 
+                    audio.pause();
+                    console.log("audio stopped"); 
+                },
+                    1000);
+
+            }
+
+// End loop one 
+        }
+
+        loop_one.addEventListener("click", LoopOne);
+        // 
+        // document.getElementById('stop-button').onclick = function () {
+        //     console.log("clicked clicked");
+        //     var sounds = document.getElementsByTagName('audio');
+        //     console.log("stop button clicked");
+        //     console.log(sounds);
+        //     for (i = 0; i < sounds.length; i++) sounds[i].pause();
+        // };
+
+
+
+        // $(`div[data-key="65"]`).on("click", function(){
+        //     console.log("test, clicked"); 
+        //     $(`audio[data-key="65"`).play(); 
+        // 65, 83, 68, 70, 71, 72, 74, 75, 76 
+        // })
+        // something like this is ideal 
+        // var allSongs = document.querySelectorAll("audio"); 
+        // switch (allSongs) {
+        //     case 65:
+        //         src = "sounds/boom.wav";
+        //         break;
+        //     case 83:
+        //         src = "sounds/hihat.wav";
+        //         break;
+        //     case 68:
+        //         src = "How you like them apples?";
+        //         break;
+        //     default:
+        //         src = "sounds/boom.wav";
+        // }
+
+        function playSound(e) {
+
+            console.log("test:", e);
+
+            console.log("test obj difference:", audio)
+            //   do i need to escape quotes here ? 
+            var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+
+            var audioKey = document.querySelector(`div.key[data-key="${e.keyCode}"]`);
+
+            //   var cymbalDecay, cymbalAttack; 
+
+            if (!audio) {
+                return;
+            }
+            audio.currentTime = 0;
+            audio.play()
+            audioKey.classList.add('playing');
+
+        }
+
+        function removeTransition(e) {
+            if (e.propertyName !== "transform") {
+                return;
+            }
+            console.log(this);
+            this.classList.remove("playing");
+        }
+
+        var allKeys = document.querySelectorAll(".key");
+
+        allKeys.forEach(function (audioKey) {
+            audioKey.addEventListener("transitionend", removeTransition)
+        });
+
+        window.addEventListener("keydown", playSound)
+
+
+
+    </script>
 </body>
 
 </html>

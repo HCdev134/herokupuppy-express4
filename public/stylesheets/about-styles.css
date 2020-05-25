@@ -21,12 +21,11 @@ body{
     text-align: center;
 }
 .desktop_navbar a{
-    display: block;
-    float: left;
-    margin-left: 3rem;
-    margin-right: 1rem;
+    display: flex;
+    flex-direction: row;
+   
     color:#fff;
-    padding: 18px 26px;
+    
     border-bottom: 4px solid transparent;
     text-decoration: none;
 
@@ -68,7 +67,8 @@ section.page-section:hover{
         padding: 6rem;
     }
     .desktop_navbar a {
-        float: none;
+        display: flex; 
+        flex-direction: column;
         border-bottom: 2px solid #1D3557;
     }
     .desktop_navbar a:hover{
