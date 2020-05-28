@@ -1,21 +1,27 @@
 var express = require("express"); 
 var path = require("path");
 var ejs = require("ejs");
-// var morgan = require("morgan")
+// var morgan = require("morgan");
 var helmet = require("helmet");
 var PORT = process.env.port || 5000;
 
 var app = express()
 
 
-// app.engine("ejs", ejs({defaultLayout: "main"}));
-app.set("view engine", "ejs");
+// layout folder app.engine("ejs", ejs({defaultLayout: "main"}));
 
+app.set("views", "./views"); 
+app.set("view engine", "ejs"); 
 
+app.set("custom", "dummydata"); 
 app.use(express.static(path.join(__dirname, "/public")));
 
+// allow static assets like images on SSR "/" routes
+// app.use(express.static(path.join(__dirname, "/")));
+// app.use(express.static(path.join(__dirname + "/static")));
+
 // morgan go before helmet and after express Static
-// app.use(morgan("tiny"));
+
 app.use("/stylesheets", express.static(__dirname + '/styles'));
 app.use("/images", express.static(__dirname + '/images'));
 app.use("/javascripts", express.static(__dirname + '/scripts'));
@@ -24,9 +30,9 @@ app.use("/javascripts", express.static(__dirname + '/scripts'));
 (function(){
   console.log("server running, function immediately", PORT);
 })()
-
-
 app.use(helmet())
+
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + 'public/index.html'));
 });
@@ -46,7 +52,7 @@ app.get("/instruments", function(req, res){
       unsplashURIs: ["unsplash api 1", "unsplash api 2"]
      }
     ),
-    console.log('redirect attempt, redirecting...'); 
+    console.log('instruments route requested'); 
    
 });
 

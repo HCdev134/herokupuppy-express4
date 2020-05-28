@@ -42,3 +42,27 @@ function LoopOne() {
 
 }
 loop_one.addEventListener("click", LoopOne);
+
+
+
+
+        // $(`div[data-key="65"]`).on("click", function(){
+        //     console.log("test, clicked"); 
+        //     $(`audio[data-key="65"`).play(); 
+        // 65, 83, 68, 70, 71, 72, 74, 75, 76 
+        // })
+        // something like this is ideal 
+        // var allSongs = document.querySelectorAll("audio"); 
+        // switch (allSongs) {
+        //     case 65:
+        //         src = "sounds/boom.wav";
+        //         break;
+        //     case 83:
+        //         src = "sounds/hihat.wav";
+        //         break;
+        //     case 68:
+        //         src = "How you like them apples?";
+        //         break;
+        //     default:
+        //         src = "sounds/boom.wav";
+        // }

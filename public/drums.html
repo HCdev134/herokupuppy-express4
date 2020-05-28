@@ -67,18 +67,22 @@
             <div class="col s6 m4 green">
                 <h2>Music Loops</h2>
                 <button id="loop-1" class="btn btn-block margin-button">loop 1</button>
+                <button id="loop-2" class="btn btn-block margin-button">loop 2</button>
+                <button id="emergency-stop-btn" class="btn">Emergency Stop <i class="fa fa-refresh"></i></button>
+
+
             </div>
             <div class="col s6 m4 blue">
                 <h3>Loop Control</h3>
-                
+
                 <button id="stop-button" class="btn btn-block margin-button">Stop Loops</button>
             </div>
-   
-           
-         
-           
+
+
+
+
         </div>
-       
+
     </div>
 
     <audio data-key="65" src="sounds/clap.wav"></audio>
@@ -106,17 +110,17 @@
             <div class="col s1">10</div>
             <div class="col s1">11</div>
             <div class="col s1">12</div>
-          </div>
+        </div>
     </div>
-    
+
     <div class="container white">
         <button class="btn center show-text">show more</button>
         <h5>UI explanation</h5>
         <p id="text-body" class="ui-explanation">
 
-            Users: The Drum Sounds May take a few seconds to load. 
-            Press The corresponding keys to make drum sounds 
-            Loops: If the loop will not stop playing after clicking "Stop Loops", 
+            Users: The Drum Sounds May take a few seconds to load.
+            Press The corresponding keys to make drum sounds
+            Loops: If the loop will not stop playing after clicking "Stop Loops",
             Refresh the Page or Close the Tab
 
 
@@ -174,29 +178,67 @@
         // #endregion
 
         // 10 seperate 
-        var one = document.querySelector(`div[data-key="65"]`); 
+        // var emergencyStopBtn = document.querySelector("emergency-stop-btn");
 
-        one.onclick = function(){
-            console.log("function ran: one.click"); 
+        // emergencyStopBtn.onclick = setTimeout(function () {
+        //     audio = document.querySelectorAll("audio"); 
+        //     audio.pause();
+        //     console.log("Test: Timer");
+        //     alert("Audio Stop Successfully");
+        // },1000);
+    
+        var one = document.querySelector(`div[data-key="65"]`);
+
+        one.onclick = function () {
+            console.log("function ran: one.click");
             var oneAudio = new Audio("sounds/boom.wav");
             oneAudio.play()
         }
         // simple code, 1 event per one audio, would have to write 10 seperate functions
-        function SeperateTenCalls(){
-            // Ten Functions for 10 buttons, not ideal 
-        }
-        function playSimple(){
-            // get the audio element to play and pause
-        }
-        function playItCorrectly() {
-            // ieterate over audio elements and play the correct one 
+        var loop_two = document.querySelector("button#loop-2");
+        function LoopTwo() {
+            var audio = new Audio()
+            i = 0;
+            var playlist_two = new Array("sounds/boom.wav", "sounds/clap.wav", "sounds/boom.wav");
 
-            //OPTION:loop through all 10 audios 
-            // OPTION: create 10 anonymous functions for click event 
-            // var songs_list = new Array("sounds/clap.wav", "sounds/hihat.wav", "sounds/kick.wav", "sounds/openat.whav", "sounds/ride.wav", "sounds/snare.wav", "sounds/tink.wav", "sounds/tom.wav"); 
+            audio.addEventListener("ended", function () {
+                i = ++i < playlist_two.length ? i : 0;
+                console.log(`testing sound array index is:${i}`);
+                console.log(`sound array length: ${i.length}`);
+
+                // ieterate and play
+                audio.src = playlist_two[i];
+                audio.play()
+                // does true come from the ternary i? or the function/event being passed in? 
+            }, true);
+            audio.volume = 0.8;
+
+            audio.src = playlist_two[0];
+            audio.play();
+            audio.currentTime = 0;
+            audio.loop = false;
+
+            var audio_stop_btn = document.getElementById("stop-button");
+            audio_stop_btn.onclick = function () {
+
+
+                setTimeout(function () {
+                    console.log("clicked");
+                    audio.loop = false;
+                    // audio.currentSrc = "sounds/ride.wav"; 
+                    audio.pause();
+                    console.log("audio stopped");
+                },
+                    1000);
+
+            }
+
         }
+
+
 
         // change to loop buttons 
+
         var loop_one = document.querySelector(`button#loop-1`);
         function LoopOne() {
 
@@ -222,54 +264,27 @@
             // loop stopper, has to be within function to recognize audio variable 
             var audio_stop_btn = document.getElementById("stop-button");
             audio_stop_btn.onclick = function () {
-               
-               
+
+
                 setTimeout(function () {
                     console.log("clicked");
                     audio.loop = false;
                     // audio.currentSrc = "sounds/ride.wav"; 
                     audio.pause();
-                    console.log("audio stopped"); 
+                    console.log("audio stopped");
                 },
                     1000);
 
             }
 
-// End loop one 
+            // End loop one 
         }
 
         loop_one.addEventListener("click", LoopOne);
-        // 
-        // document.getElementById('stop-button').onclick = function () {
-        //     console.log("clicked clicked");
-        //     var sounds = document.getElementsByTagName('audio');
-        //     console.log("stop button clicked");
-        //     console.log(sounds);
-        //     for (i = 0; i < sounds.length; i++) sounds[i].pause();
-        // };
+        loop_two.addEventListener("click", LoopTwo);
 
 
 
-        // $(`div[data-key="65"]`).on("click", function(){
-        //     console.log("test, clicked"); 
-        //     $(`audio[data-key="65"`).play(); 
-        // 65, 83, 68, 70, 71, 72, 74, 75, 76 
-        // })
-        // something like this is ideal 
-        // var allSongs = document.querySelectorAll("audio"); 
-        // switch (allSongs) {
-        //     case 65:
-        //         src = "sounds/boom.wav";
-        //         break;
-        //     case 83:
-        //         src = "sounds/hihat.wav";
-        //         break;
-        //     case 68:
-        //         src = "How you like them apples?";
-        //         break;
-        //     default:
-        //         src = "sounds/boom.wav";
-        // }
 
         function playSound(e) {
 
