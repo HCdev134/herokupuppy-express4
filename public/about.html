@@ -1,31 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="stylesheets/about-styles.css">
-</head>
-<body>
-            <div class="desktop_navbar">
-                <h2>About Us</h2>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="music-main.html">Music Area</a>
-            </div>
-               
-       <section id="s1" class="page-section">
-           <div class="container">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt nemo, quae perspiciatis voluptatum atque, repellendus commodi voluptatem, aspernatur ipsum maiores? Dolor voluptatum, quam aperiam quis aspernatur fugiat laborum odio beatae libero magni vitae eaque consequuntur repellendus mollitia a in sed cumque iure corrupti. Architecto ipsum, sunt numquam quia laborum eos, placeat ad totam distinctio saepe cupiditate eligendi modi ab perferendis facilis dolores ipsa eius dolore quam libero ut a inventore! Neque ratione libero excepturi, maxime vero modi error iusto reprehenderit deserunt quos nam. Explicabo pariatur asperiores velit beatae? Excepturi pariatur accusantium consequuntur velit sapiente asperiores labore magni quaerat. Aliquid rem mollitia iusto, minima, possimus in quod repellat illo consequuntur, ex fuga dolorem. Dolor accusamus atque nam, obcaecati dignissimos quaerat odit. Facere, minus consectetur? Exercitationem dolorum dignissimos blanditiis in soluta quod voluptatem, animi, vel neque ad aliquam id delectus molestiae? Odit at soluta unde deserunt! Fuga laboriosam, dolor aspernatur tempora omnis delectus maiores illum necessitatibus ea reiciendis, dolorem, fugit at doloremque qui itaque harum quidem rem accusantium praesentium beatae! Mollitia saepe voluptate velit, maxime inventore rerum eligendi hic. Dolorum ipsa illum nostrum porro libero. Earum nemo, delectus, cumque quis voluptatem, minima iure modi placeat cum eum dolores officia non quam.
-           </div>
-       </section>
 
-       <section class="page-section">
-           
-           <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis harum aspernatur voluptatibus officia. Reiciendis officia voluptatem, voluptatibus qui consequuntur, recusandae harum nobis dolore voluptatum autem fugit aperiam soluta pariatur alias et corporis? Provident magnam voluptates veritatis repellendus. Ut quaerat amet aut quod quos velit autem tempore veritatis quas minima?
-           </p>
-       </section>
+
+    <!-- Raleway font -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;900&display=swap" rel="stylesheet"> -->
+   
+</head>
+
+<body>
+    <div class="pg-header white">
+        <h2 class="pg-heading-greeting">About Us</h2>
+    </div>
+
+    <div class="desktop_navbar">
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="music-main.html">Music Area</a>
+    </div>
+
+    <section id="s1" class="page-section">
+        <div class="container">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt nemo, quae perspiciatis voluptatum
+            atque, repellendus commodi voluptatem, aspernatur ipsum maiores? Dolor voluptatum, quam aperiam quis
+            aspernatur fugiat laborum odio beatae libero magni vitae eaque consequuntur repellendus mollitia a in sed
+            cumque iure corrupti. Architecto ipsum, sunt numquam quia laborum eos, placeat ad totam distinctio saepe
+            cupiditate eligendi modi ab perferendis facilis dolores ipsa eius dolore quam libero ut a inventore! Neque
+            ratione libero excepturi, maxime vero modi error iusto reprehenderit deserunt quos nam. Explicabo pariatur
+            asperiores velit beatae? Excepturi pariatur accusantium consequuntur velit sapiente asperiores labore magni
+            quaerat. Aliquid rem mollitia iusto, minima, possimus in quod repellat illo consequuntur, ex fuga dolorem.
+            Dolor accusamus atque nam, obcaecati dignissimos quaerat odit. Facere, minus consectetur? Exercitationem
+            dolorum dignissimos blanditiis in soluta quod voluptatem, animi, vel neque ad aliquam id delectus molestiae?
+            Odit at soluta unde deserunt! Fuga laboriosam, dolor aspernatur tempora omnis delectus maiores illum
+            necessitatibus ea reiciendis, dolorem, fugit at doloremque qui itaque harum quidem rem accusantium
+            praesentium beatae! Mollitia saepe voluptate velit, maxime inventore rerum eligendi hic. Dolorum ipsa illum
+            nostrum porro libero. Earum nemo, delectus, cumque quis voluptatem, minima iure modi placeat cum eum dolores
+            officia non quam.
+        </div>
+    </section>
+
+    <section class="page-section">
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis harum aspernatur voluptatibus
+            officia. Reiciendis officia voluptatem, voluptatibus qui consequuntur, recusandae harum nobis dolore
+            voluptatum autem fugit aperiam soluta pariatur alias et corporis? Provident magnam voluptates veritatis
+            repellendus. Ut quaerat amet aut quod quos velit autem tempore veritatis quas minima?
+        </p>
+    </section>
+    <button id="add-text" class="add-text-btn btn">Add Text</button>
+    <div id="appender">
+
+    </div>
+    <script>
+
+        var addTextBtn = document.querySelector("button#add-text");
+        addTextBtn.onclick = function () {
+            var outputText = document.getElementById("appender");
+
+            outputText.append("text text text text text text");
+            console.log(outputText);
+        }
+
+    </script>
 </body>
+
 </html>

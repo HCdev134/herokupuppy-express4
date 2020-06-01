@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-particles.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script> -->
+    
+</head>
+
+<body>
+    
+    <div id="particles-js">
+
+        <div id="dummy-login">
+            <form action="">
+                <div class="group">
+                    <label for="Username">Username</label>
+                    <br>
+                    <input type="text" placeholder="username" />
+                </div>
+
+                <div class="group">
+                    <label for="Password">Password</label>
+                    <input type="text" placeholder="username" />
+                </div>
+
+                <input type="submit" value="Login"/>
+                <input type="reset" value="Forgot Password"/>
+            </form>
+        </div>
+    </div>
+   <footer>
+       <strong>&copy; DevRespecter <a href="" class="btn">Github</a></strong>
+   </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+       particlesJS.load("particles-js", "particular-particles.json", function(){
+           if(error){
+               console.log(error)
+           }
+           console.log("CB: found, success!");
+       });
+    </script>
+    
+</body>
+
+</html>

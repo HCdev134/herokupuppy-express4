@@ -1,17 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 *,*::before,*::after{
     box-sizing: border-box;
     text-decoration: none;
 }
 html,body{
     min-height: 100%;
+    margin:0;
+    padding:0;
     
     
 }
 
 body{
+    font-family: 'Source Code Pro', monospace;
     background-image: linear-gradient(170deg, #3189ED 0%, #1D3557 33%, #084184 100% );
     margin:0;
     padding:0;
+}
+
+h2.pg-heading-greeting{
+    margin: 0;
+    padding-top: 1rem;
+}
+.pg-header{
+   
+    height: 15vh;
+    max-width: 100%;
+    background: #084184;
+
+    text-align: center;
+    
 }
 .desktop_navbar{
     display: flex;
@@ -55,12 +73,22 @@ section.page-section{
    background: #fff;
    padding: 6rem;
    border-radius: 16px;
-   box-shadow: 1px 1px 20px #000000;
+   box-shadow: 1px 15px 20px #000000;
+
+}
+.section-blu-theme{
+    background: #1D3557; 
 
 }
 section.page-section:hover{
     box-shadow: 1px 1px 20px #333333;
 }
+
+/* utility classes */
+
+.margin-button{
+    margin: 1rem; 
+  }
 @media(max-width:762px){
     section.page-section{
         
@@ -69,7 +97,7 @@ section.page-section:hover{
         max-width: 100%;
         width: 80%;
         margin: 1rem auto;
-        padding: 6rem;
+        padding: 1rem; 
     }
     .desktop_navbar{
         display: flex; 

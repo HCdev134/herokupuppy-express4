@@ -18,6 +18,14 @@ html {
   }
   
 
+/* particles.js usage */
+#particles-js canvas{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+/* particles.js usage */
 .ev-keys{
     display: flex;
     flex: 1;
@@ -46,7 +54,9 @@ html {
     border-color: var(var(--drum-color-green));
     box-shadow: 0 0 1rem var(--drum-color-0) ;
   }
-  
+p{
+  padding: 1.835rem;
+}  
 kbd {
     display: block;
     font-size: 4rem;
@@ -59,15 +69,17 @@ kbd {
     letter-spacing: .1rem;
     color: #10ad57;
 }
-.ui-explanation{
-    padding:2rem; 
+p.ui-explanation{
+  padding: 20px;
 }
 .mobile-keyboard-trigger{
   margin:10px;
 }
+
 .margin-button{
   margin: 1rem; 
 }
+
 .input-container{
   width: 80%;
   margin: 0 auto;
