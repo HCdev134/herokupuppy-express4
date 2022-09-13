@@ -17,7 +17,7 @@ app.set("custom", "dummydata");
 app.use(express.static(path.join(__dirname, "/public")));
 
 // allow static assets like images on SSR "/" routes
-// app.use(express.static(path.join(__dirname, "/")));
+
 // app.use(express.static(path.join(__dirname + "/static")));
 
 // morgan go before helmet and after express Static
@@ -28,9 +28,9 @@ app.use("/javascripts", express.static(__dirname + '/scripts'));
 
 // TODO: write our own logger since morgan cant be used in prod, and we not spen muney 
 (function(){
-  console.log("server running, function immediately", PORT);
+  console.log(`puppy4 running SERVER at 127.0.0.1:3000`);
 })()
-app.use(helmet())
+app.use(helmet());
 
 
 app.get('/', function (req, res) {

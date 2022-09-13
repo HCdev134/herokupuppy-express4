@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./stylesheets/drum-music-styles.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-    integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous">
+        integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous">
 </head>
 
 <body>
@@ -99,8 +99,8 @@
         </li>
         <li>
             <a href="playlist.html" class="waves-effect">
-                Content
-                <i class="fa fa-gears"></i>
+                Playlist
+                <i class="fa fa-music"></i>
             </a>
         </li>
         <li>
@@ -109,7 +109,7 @@
                 <i class="fa fa-gears"></i>
             </a>
         </li>
-        </li>
+
     </ul>
 
     <div class="input-container">
@@ -117,9 +117,9 @@
         <input type="text" id="drumseq" class="sequence-input">
     </div>
 
-    <div id="particles-js"></div>
+    <div id="particles-js">
 
-    
+
         <button id="btn-mobile-trigger" class="mobile-keyboard-trigger btn black white-text">Trigger Mobile
             Keyboard</button>
         <button id="btn-mobile-trigger2" class="mobile-keyboard-trigger btn">Keyboard Trigger Test 2</button>
@@ -165,20 +165,20 @@
 
 
         </div>
-  
+
+    </div>
 
     <div class="container white">
-        <h3>Audio Controls For Loops</h3>
+        <h3 class="center">DRUM MACHINE</h3>
         <div class="row">
-            <div class="col s6 m4 green">
+            <div class="col s12 m5 green">
                 <h2>Music Loops</h2>
                 <button id="loop-1" class="btn btn-block margin-button">loop 1</button>
-                <button id="loop-2" class="btn btn-block margin-button">loop 2</button>
-                <button id="emergency-stop-button" class="btn"><i class="fa fa-refresh"></i>Em Stop</button>
+
 
 
             </div>
-            <div class="col s6 m4 blue">
+            <div class="col s12 m7 blue">
                 <h3>Loop Control</h3>
 
                 <button id="stop-button" class="btn btn-block margin-button">Stop Loops</button>
@@ -202,102 +202,36 @@
     <audio data-key="76" src="sounds/tink.wav"></audio>
 
 
-    <div class="container white">
-        <div class="row" style="padding:1rem; margin:1rem; ">
-            <div class="col s1">
-                <button class="btn margin-button">1</button>
-            </div>
-            <div class="col s1">
-                <button class="btn margin-button">2</button>
-            </div>
-            <div class="col s1">
-                <button class="btn margin-button">3</button>
-            </div>
-            <div class="col s1">
-                <button class="btn margin-button">4</button>
-            </div>
-            <div class="col s1"></div>
-            <div class="col s1">6</div>
-            <div class="col s1">7</div>
-            <div class="col s1">8</div>
-            <div class="col s1">9</div>
-            <div class="col s1">10</div>
-            <div class="col s1">11</div>
-            <div class="col s1">12</div>
+    <div class="push-opaque" style="height:300px; opacity: 0;"></div>
+
+
+
+    <!-- UI explantion section -->
+    <section class="section">
+
+
+        <div class="container white">
+            <h4 class="center">UI explanation</h4>
+            <p id="text-body" class="ui-explanation center">
+                Drum Sound Maker for desktop, does not fit with mobile
+            </p>
+            <div class="center" style="font-size: 18px;">When Pressing Keys at First, Sounds May take 2-3 seconds to load</div>
         </div>
-    </div>
 
-    <div class="container white">
-        <button class="btn center show-text">show more</button>
-        <h5>UI explanation</h5>
-        <span class="badge blue white-text">unfinshed buttons to express my contempt</span>
-        <p id="text-body" class="ui-explanation">
-           
-            Users: The Drum Sounds May take a few seconds to load.
-            Press The corresponding keys to make drum sounds
-            Loops: If the loop will not stop playing after clicking "Stop Loops",
-            Refresh the Page or Close the Tab
-            <br> 
-            Desktop Users: Now have the ability To press 2 keys at once, 
-            with both typing and clicking 
-
-           - Should Work on Mobile Pressing of Drum Key <br>
-           - Kinda Sucks tbhfam 
-
-
-
-        <pre>:focus   </pre>
-        is only applied to input elements on mobile devices,
-        I have not seen a solution to
-            target single containers or the document body
-        </p>
-        <p>
-            <span class="new badge">feature</span>
-            Features for mobile devices might have to be centered around buttons vs keys.
-
-            There will also be a section for your input on features in the coming weeks
-
-            Mobile Screen Size and the number of "buttons" you can press is fairly limited on web apps
-
-            Since the Key Code (Desktop) Methods work really well, we are working on implementing Instrument
-            Input Sequences based on key codes.
-            (Accidentally discovered this trying to trigger the android keyboard with an input element)
-        </p>
-        <p>
-            <span class="new badge">Feature</span>
-        Drum Machine is playing sound too slow to be viable. <br>
-        -  Working on improving UI for mobile <br>
-        -  Original UI is good on desktop/laptop bigger/any screen size larger than mobile <br>
-        -  working on a seperate drums page for mobile users <br>
-        -  Added Particles.js  <br>
-        -  Added navigation to drums page  <br>
-        -  New Test Version to test Mobile events  <br>
-        -  Drums should now work on mobile press  <br>
-        -  Sequence Input feature coming soon  <br>
-        -  TODO:  keyboard triggers on native devices(android/ios) <br>
-        -  TODO:  Transition, Animation, Particles.js and other UI improvements <br>
-
-        </p>
-
-      
-
-
-
-        <div style="font-size: 18px;">When Pressing Keys at First, Sounds May take 2-3 seconds to load</div>
-    </div>
+    </section>
 
 
     <footer class="page-footer black white-text">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text"><i class="fa fa-music"></i></h5>
+                    <h5 class="white-text">Hello<i class="fa fa-music"></i></h5>
                     <p class="grey-text text-lighten-4">Thank You For Visiting</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Sitemap</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="javscript:void(0);">home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="index.html">home</a></li>
                         <li><a class="grey-text text-lighten-3" href="drums.html">drums demo</a>
                         </li>
                         <li><a class="grey-text text-lighten-3" href="/instruments">/instruments/</a></li>
@@ -323,79 +257,42 @@
     <script src="./javascripts/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        particlesJS.load("particles-js", "particular-particles.json", function () {
-            //    if(error){
-            //        console.log(error)
-            //    }
+        particlesJS.load("particles-js", "particlesjs-config.json", function () {
+
             console.log("CB: found, success!");
         });
     </script>
 
 
     <script>
-        // navbar scripts 
 
-        // #region TODO and comments
-        /* 
-         * desktop improvements 
-         * improve transition speed so drums can switch as fast as possible 
-         * attack and decay speed variables for cymbals 
-         * 
-         */
-
-        // var emergencyStopBtn = document.querySelector("emergency-stop-btn");
-
-        // emergencyStopBtn.onclick = setTimeout(function () {
-        //     audio = document.querySelectorAll("audio"); 
-        //     audio.pause();
-        //     console.log("Test: Timer");
-        //     alert("Audio Stop Successfully");
-        // },1000);
-        //GOAL mobile play drums, Click Events 
-
-        // trying to trigger a focus so android keyboard opens up and applys key events to body > #ev-keys
-
-        // mobile-detect & find by user agent 
-        // #endregion
-
-        // 10 seperate 
         $(function () {
 
-
-            var emergencyStopBtn = document.getElementById("emergency-stop-button");
-            emergencyStopBtn.addEventListener("click", stopAudio)
-            function stopAudio() {
-                return audio.pause()
-            }
             var globalListenBtn = document.querySelectorAll(`div[data-key]`);
 
 
+            // Click Functions 
             var one = document.querySelector(`div[data-key="65"]`);
 
             one.onclick = function () {
-                console.log("function ran: one.click");
+                console.log("Sound One: Running");
                 var oneAudio = new Audio("sounds/boom.wav");
                 oneAudio.play()
             }
-            var two = document.querySelector(`div[data-key="83"`)
-
+            var two = document.querySelector(`div[data-key="83"`);
 
             two.onclick = function () {
-                console.log("function ran: two.click");
+                console.log("Sound Two: Running");
                 var oneAudio = new Audio("sounds/hihat.wav");
                 oneAudio.play()
             }
 
             var soundThree = document.querySelector(`div[data-key="68"`);
             soundThree.onclick = function () {
-                console.log("function ran: two.click");
+                console.log("Sound Three: Running");
                 var threeAudio = new Audio("sounds/kick.wav");
                 threeAudio.play()
             }
-
-
-            // 65clap 83hihat 68kick 70openhat 71boom 72ride 74snare 75tom 76tink 65clap 83hihat 68kick 70openhat 71boom 72ride 74snare 75tom 76tink  
-
             var soundFour = document.querySelector(`div[data-key="70"`);
             soundFour.onclick = function () {
                 console.log("Sound Four: Running");
@@ -436,47 +333,6 @@
              * sound loops section 
              * 65clap 83hihat 68kick 70openhat 71boom 72ride 74snare 75tom 76tink 
              */
-            // simple code, 1 event per one audio, would have to write 10 seperate functions
-            var loop_two = document.querySelector("button#loop-2");
-            function LoopTwo() {
-                var audio = new Audio()
-                i = 0;
-                var playlist_two = new Array("sounds/boom.wav", "sounds/clap.wav");
-
-                audio.addEventListener("ended", function () {
-                    i = ++i < playlist_two.length ? i : 0;
-                    console.log(`testing sound array index is:${i}`);
-                    console.log(`sound array length: ${i.length}`);
-
-                    // ieterate and play
-                    audio.src = playlist_two[i];
-                    audio.play()
-                    // does true come from the ternary i? or the function/event being passed in? 
-                }, true);
-                audio.volume = 0.8;
-
-                audio.src = playlist_two[0];
-                audio.play();
-                audio.currentTime = 0;
-                audio.loop = false;
-
-                var audio_stop_btn = document.getElementById("stop-button");
-                audio_stop_btn.onclick = function () {
-
-
-                    setTimeout(function () {
-                        console.log("clicked");
-                        audio.loop = false;
-                        // audio.currentSrc = "sounds/ride.wav"; 
-                        audio.pause();
-                        console.log("audio stopped");
-                    },
-                        1000);
-
-                }
-
-            }
-            // change to loop buttons 
 
             var loop_one = document.querySelector(`button#loop-1`);
             function LoopOne() {
@@ -484,7 +340,7 @@
 
                 var audio = new Audio(),
                     i = 0;
-                var playlist = new Array('sounds/boom.wav', 'sounds/clap.wav', "sounds/hihat.wav");
+                var playlist = new Array('sounds/boom.wav', 'sounds/boom.wav', 'sounds/snare.wav', 'sounds/boom.wav', 'sounds/boom.wav', 'sounds/snare.wav', 'sounds/snare.wav');
 
                 audio.addEventListener('ended', function () {
                     i = ++i < playlist.length ? i : 0;
@@ -498,8 +354,6 @@
                 audio.play();
                 audio.currentTime = 0;
                 audio.loop = false;
-
-
                 // loop stopper, has to be within function to recognize audio variable 
                 var audio_stop_btn = document.getElementById("stop-button");
                 audio_stop_btn.onclick = function () {
@@ -513,24 +367,18 @@
                         console.log("audio stopped");
                     },
                         1000);
-
                 }
-
                 // End loop one 
             }
 
             loop_one.addEventListener("click", LoopOne);
-            loop_two.addEventListener("click", LoopTwo);
-
-
-
 
             function playSound(e) {
 
                 console.log("test:", e);
 
                 console.log("test obj difference:", audio)
-                //   do i need to escape quotes here ? 
+
                 var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
 
                 var audioKey = document.querySelector(`div.key[data-key="${e.keyCode}"]`);
