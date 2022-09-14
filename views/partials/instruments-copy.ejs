@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Instruments</title>
+  <link rel="stylesheet" type="text/css" href="./../public/stylesheets/materialize.min.css">
+
+  <link type="text/javascript" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <h1 class="center">Instruments</h1>
+
+  <%- include('partials/nav.ejs') %>
+
+
+  <div class="container center">
+    <ul class="collection center-align">
+
+      <% for (var i=0; i < 5; i++) { %>
+      <li class="collection-item">
+        <%=  instrumentArr[i] %>
+      </li>
+      <% } %>
+
+    </ul>
+  </div>
+
+  <div>
+    <h5 class="center-align"> <%= info %> </h5>
+  </div>
+  <!-- instrument cards -->
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <img src="./../public/images/concert-duotone-32x32.png">
+          <span class="card-title">Drums Demo</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fa fa-plus-sign">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>Drums Demo Page</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+  <script src="./../public/javascripts/jquery3.5.1-uncompressed.js"></script>
+  <script src="./../public/javascripts/materialize.min.js"></script>
+
+
+  <script>
+    $(function () {
+      $(".sidenav").sidenav();
+    });
+  </script>
+</body>
+
+</html>
