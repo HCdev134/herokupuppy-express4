@@ -11,10 +11,9 @@ var app = express()
 
 // layout folder app.engine("ejs", ejs({defaultLayout: "main"}));
 
-app.set("views", "./views"); 
+app.set("views", path.join(__dirname, "./views")); 
 app.set("view engine", "ejs"); 
 
-app.set("custom", "dummydata"); 
 app.use(express.static(path.join(__dirname, "/public")));
 
 // allow static assets like images on SSR "/" routes
@@ -29,7 +28,7 @@ app.use("/javascripts", express.static(__dirname + '/scripts'));
 
 // TODO: write our own logger since morgan cant be used in prod, and we not spen muney 
 (function(){
-  console.log(`puppy4 running SERVER at 127.0.0.1:3000`);
+  console.log(`HerokuPuppy4 Server Running`);
 })()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
