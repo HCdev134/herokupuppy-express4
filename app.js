@@ -46,24 +46,20 @@ app.get("/pageone", function(req, res){
 
 app.get("/instruments", function(req, res){
    // res.redirect("content.html");
-    res.render("instruments",
     // object dummy data
-     {
-      info: "Instruments Page",
-      instrumentArr: ["Drums", "EDM pad", "Drum pad", "digital guitar", "scale mixer"],
-      unsplashURIs: ["unsplash api 1", "unsplash api 2"]
-     }
-    ),
+    console.log(`DEBUG ${__dirname}`);
     console.log('instruments route requested'); 
+    res.render("instruments"); 
+
    
 });
 
-app.post("/neocitytest", function (req, res){
-  console.log(req.body);
-  console.log("POST test");
+// app.post("/neocitytest", function (req, res){
+//   console.log(req.body);
+//   console.log("POST test");
 
-  //fs.writeFile(path.join(__dirname, "testlog.txt"))
-})
+//   //fs.writeFile(path.join(__dirname, "testlog.txt"))
+// })
 // FIX *** IMPORTANT - Question: NO CALLBACK IN PROD
 
 // COMMIT THIS 
