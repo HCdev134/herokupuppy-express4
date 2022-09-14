@@ -3,7 +3,7 @@ var path = require("path");
 var ejs = require("ejs");
 // var morgan = require("morgan");
 var helmet = require("helmet");
-const { fstat } = require("fs");
+//const { fstat } = require("fs");
 var PORT = process.env.port || 5000;
 
 var app = express()
@@ -31,7 +31,8 @@ app.use("/javascripts", express.static(__dirname + '/scripts'));
 (function(){
   console.log(`puppy4 running SERVER at 127.0.0.1:3000`);
 })()
-app.use(express.bodyParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 
 
@@ -57,6 +58,7 @@ app.get("/instruments", function(req, res){
     console.log('instruments route requested'); 
    
 });
+
 app.post("/neocitytest", function (req, res){
   console.log(req.body);
   console.log("POST test");
