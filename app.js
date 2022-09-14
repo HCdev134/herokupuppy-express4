@@ -57,6 +57,9 @@ app.get("/content", function(req, res){
     `);
   res.sendFile(path.join(__dirname + 'public/content.html'));
 
+});
+app.get("/instruments", function(req,res) {
+  res.render("instruments.ejs");
 })
 
 // app.post("/neocitytest", function (req, res){
