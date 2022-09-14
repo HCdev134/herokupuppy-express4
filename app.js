@@ -36,23 +36,28 @@ app.use(helmet());
 
 
 app.get('/', function (req, res) {
+    console.log(`DEBUG: \n 
+    
+  IP: ${req.ip}
+  Orig-URL:  ${req.originalUrl}
+  Dir: ${__dirname};
+  DIR: ${process.cwd()}
+    `);
     res.sendFile(path.join(__dirname + 'public/index.html'));
 });
   // add other routes below
 
-app.get("/pageone", function(req, res){
-    res.render("index");
-});
+app.get("/content", function(req, res){
+  console.log(`DEBUG: \n 
+    
+  IP: ${req.ip}
+  Orig-URL:  ${req.originalUrl}
+  Dir: ${__dirname};
+  DIR: ${process.cwd()}
+    `);
+  res.sendFile(path.join(__dirname + 'public/content.html'));
 
-app.get("/instruments", function(req, res){
-   // res.redirect("content.html");
-    // object dummy data
-    console.log(`DEBUG ${__dirname}`);
-    console.log('instruments route requested'); 
-    res.render("instruments"); 
-
-   
-});
+})
 
 // app.post("/neocitytest", function (req, res){
 //   console.log(req.body);
